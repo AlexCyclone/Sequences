@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.print("Input sequence: ");
-        int[] sequence = readArray();
-        System.out.println(nextInSequence(sequence));
+        System.out.println(nextInSequence(readArray()));
     }
 
     public static int[] readArray() {
@@ -25,17 +24,21 @@ public class Main {
         }
 
         int val = nextArithmetic(array);
+
         if (val != Integer.MIN_VALUE) {
             return val;
         }
+
         val = nextGeometric(array);
         if (val != Integer.MIN_VALUE) {
             return val;
         }
+
         val = nextFibonacci(array);
         if (val != Integer.MIN_VALUE) {
             return val;
         }
+
         val = nextExp(array);
         if (val != Integer.MIN_VALUE) {
             return val;
@@ -52,6 +55,7 @@ public class Main {
                 return Integer.MIN_VALUE;
             }
         }
+
         return array[array.length - 1] + k;
     }
 
@@ -77,6 +81,7 @@ public class Main {
                 return Integer.MIN_VALUE;
             }
         }
+
         return array[array.length - 2] + array[array.length - 1];
     }
 
@@ -97,6 +102,7 @@ public class Main {
                 }
             }
         }
+
         if (q == 0) {
             return Integer.MIN_VALUE;
         }
@@ -112,12 +118,14 @@ public class Main {
 
     private static int linearSearch(int[] array, int value) {
         int i = 0;
+
         for (int element : array) {
             if (element == value) {
                 return i;
             }
             i += 1;
         }
+
         return -1;
     }
 
@@ -127,6 +135,7 @@ public class Main {
                 return i;
             }
         }
+
         return -1;
     }
 }
